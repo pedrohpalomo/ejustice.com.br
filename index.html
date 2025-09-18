@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eJustice Digital — Tecnologia e Suporte para a Advocacia</title>
+  <meta name="description" content="Suporte em certificado digital e sistemas de processo eletrônico para advogados. Atendemos todo o Brasil." />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#home" class="brand">
+        <img src="logo.png" alt="eJustice Digital" class="brand__logo" />
+        <span class="brand__name">eJustice Digital</span>
+      </a>
+      <nav class="nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#sistemas">Sistemas</a>
+        <a href="#parceiros">Parceiros</a>
+        <a href="#contato" class="btn btn--sm">Orçamento</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Abrir menu" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <h1>Tecnologia e Suporte para a Advocacia</h1>
+        <p>Suporte especializado em <strong>certificado digital</strong> e <strong>processo eletrônico</strong> (PJe, e-SAJ, Projudi, eproc, etc.) para advogados de todo o Brasil.</p>
+        <div class="hero__cta">
+          <a href="#contato" class="btn">Pedir orçamento</a>
+          <a href="#downloads" class="btn btn--ghost">Downloads rápidos</a>
+        </div>
+        <ul class="badges">
+          <li>Atendimento 100% remoto</li>
+          <li>Resolução ágil de erros</li>
+          <li>Segurança e confidencialidade</li>
+        </ul>
+      </div>
+      <div class="hero__art" img src="logo.png" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Sobre / Proposta de Valor -->
+  <section id="sobre" class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>Quem somos</h2>
+        <p>A <strong>eJustice Digital</strong> ajuda escritórios de advocacia a operar sem fricção no ambiente digital da Justiça. Instalamos e configuramos tudo o que você precisa, treinamos sua equipe e resolvemos erros que travam o seu dia a dia.</p>
+        <p><em>Nosso foco é simples:</em> você cuida da estratégia jurídica, nós cuidamos da parte técnica.</p>
+      </div>
+      <div class="card highlight">
+        <h3>Por que escolher a eJustice?</h3>
+        <ul>
+          <li>Atendimento especializado para advogados</li>
+          <li>Experiência prática nos principais sistemas</li>
+          <li>Suporte rápido, humano e sem “tecniquês”</li>
+          <li>Cobertura nacional e atendimento remoto</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="section section--alt">
+    <div class="container">
+      <h2>Serviços</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Certificado Digital</h3>
+          <p>Emissão, renovação, instalação, drivers e diagnósticos. Orientação sobre segurança e boas práticas.</p>
+          <ul class="list">
+            <li>Token/Cartão + leitora</li>
+            <li>Instalação de cadeias e drivers</li>
+            <li>Validação e testes</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Processo Eletrônico</h3>
+          <p>Suporte para PJe, e-SAJ, Projudi, eproc e outros. Configurações, correções e passo a passo para peticionar.</p>
+          <ul class="list">
+            <li>Resolução de erros de acesso/assinatura</li>
+            <li>Configuração de PJeOffice, Shodo, WebSigner, Web PKI</li>
+            <li>Treinamento para equipes</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Consultoria & Treinamentos</h3>
+          <p>Organização tecnológica do escritório, checklists preventivos e capacitação prática focada na rotina do time.</p>
+          <ul class="list">
+            <li>Onboarding digital do escritório</li>
+            <li>Manuais e rotinas internas</li>
+            <li>Planos de suporte contínuo</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section id="downloads" class="section">
+    <div class="container">
+      <h2>Downloads de Drivers e Softwares</h2>
+      <p>Escolha seu sistema operacional e baixe os componentes necessários ao uso do certificado digital e à assinatura nos sistemas eletrônicos.</p>
+
+      <div class="download__controls">
+        <label class="radio"><input type="radio" name="os" value="windows" checked> Windows</label>
+        <label class="radio"><input type="radio" name="os" value="mac"> macOS</label>
+      </div>
+
+      <div id="downloadList" class="cards cards--downloads"><!-- preenchido via JS --></div>
+      <small class="muted">Dica: coloque seus instaladores em <code>/downloads/windows</code> e <code>/downloads/macos</code>. Os botões abaixo já apontam para esses caminhos.</small>
+    </div>
+  </section>
+
+  <!-- Acesso facilitado aos sistemas -->
+  <section id="sistemas" class="section section--alt">
+    <div class="container">
+      <h2>Acesso facilitado aos Sistemas de Processo Eletrônico</h2>
+      <p>Selecione o estado para ver os sistemas utilizados. Também listamos os tribunais superiores.</p>
+
+      <div class="sistemas__controls">
+        <label for="estadoSelect" class="sr-only">Estado</label>
+        <select id="estadoSelect" class="select"></select>
+      </div>
+
+      <div id="sistemasLista" class="grid-links"><!-- preenchido via JS --></div>
+
+      <div class="superiores">
+        <h3>Tribunais Superiores</h3>
+        <div class="grid-links" id="superioresLinks"><!-- preenchido via JS --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parceiros / Convênios -->
+  <section id="parceiros" class="section">
+    <div class="container">
+      <h2>Convênios & Empresas Parceiras</h2>
+      <p>Adicione aqui os logotipos e links dos seus parceiros.</p>
+      <div class="partners" id="partnersGrid">
+        <!-- Exemplo de card de parceiro (duplique e edite): -->
+        <!--
+        <a class="partner" href="https://exemplo.com" target="_blank" rel="noopener">
+          <img src="assets/parceiro-exemplo.png" alt="Parceiro Exemplo" />
+        </a>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section section--alt">
+    <div class="container grid-2">
+      <div>
+        <h2>Contato & Orçamentos</h2>
+        <p>Atendimento em todo o Brasil (100% remoto). Fale com a eJustice Digital e receba orientação sem complicação.</p>
+        <ul class="contact-list">
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/5543991084301" target="_blank" rel="noopener">43 99108-4301</a></li>
+          <li><strong>E-mail:</strong> <a href="mailto:contato@ejustice.com.br">contato@ejustice.com.br</a></li>
+        </ul>
+      </div>
+      <form id="contactForm" class="card form">
+        <div class="form__row">
+          <label>Nome*
+            <input type="text" name="name" required />
+          </label>
+        </div>
+        <div class="form__row">
+          <label>E-mail*
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <div class="form__row">
+          <label>Telefone/WhatsApp
+            <input type="tel" name="phone" />
+          </label>
+        </div>
+        <div class="form__row">
+          <label>Assunto
+            <select name="service">
+              <option>Certificado Digital</option>
+              <option>Processo Eletrônico</option>
+              <option>Treinamento</option>
+              <option>Outros</option>
+            </select>
+          </label>
+        </div>
+        <div class="form__row">
+          <label>Mensagem*
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+        </div>
+        <button type="submit" class="btn btn--full">Enviar</button>
+        <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="eJustice Digital" />
+        <p>© <span id="year"></span> eJustice Digital — Todos os direitos reservados.</p>
+      </div>
+      <a href="#home" class="to-top" aria-label="Voltar ao topo">▲</a>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="wa-float" href="https://wa.me/5543991084301" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
